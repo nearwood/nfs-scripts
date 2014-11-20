@@ -4,7 +4,7 @@ if [ -f $fileName ]
 then
 echo "Backup file \"$fileName\" already exists. Exit.";
 else
-tar -cjvf $fileName /home/public
+tar -cjvf ~/$fileName /home/public
 echo "Backup complete."
 fi
 
