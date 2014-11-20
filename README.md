@@ -1,7 +1,7 @@
 nfs-scripts
 ===========
 
-Small scripts for WordPress installs on NearlyFreeSpeech hosted sites.
+Small scripts for WordPress installs on NearlyFreeSpeech hosted sites. I was tired of not remember which site has the most up to date versions of these so I added them here. This way upstream updates are just a `git pull` away.
 
 Installation
 ====
@@ -12,8 +12,8 @@ Installation
 Usage
 ===
 
-`update.sh` Calls `backup.sh` to backup before pulling `latest.tar.gz` and extracting into `/home/public`. Removes leading folder from the tarball so that your wordpress is extracted into `public/`, not a subdirectory. Also runs `fix-grp.sh` to fix group of all files and folders.
+* `update.sh` - Calls `backup.sh` to backup before pulling `latest.tar.gz` and extracting into `/home/public`. Removes leading folder from the tarball so that your wordpress is extracted into `public/`, not a subdirectory. Also runs `fix-grp.sh` to fix group of all files and folders.
 
-`backup.sh` Copies all files and folders in `/home/public` into a bzipped tarball, saved to your home directory (usually `/home/private`).
+* `backup.sh` - Copies all files and folders in `/home/public` into a bzipped tarball, saved to your home directory (usually `/home/private`).
 
-`fix-grp.sh` Recursively fixes the group permissions of all files and folders in `/home/public` to match your host. Used after extracting the update.
+* `fix-grp.sh`- Recursively fixes the group permissions of all files and folders in `/home/public` to match your host. Used after extracting the update.
