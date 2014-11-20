@@ -1,7 +1,7 @@
 nfs-scripts
 ===========
 
-Small scripts for WordPress installs on NearlyFreeSpeech hosted sites. I was tired of not remember which site has the most up to date versions of these so I added them here. This way upstream updates are just a `git pull` away.
+Small scripts for WordPress installs on NearlyFreeSpeech hosted sites. I was tired of not remembering which site has the most up to date versions of these so I added them here. This way updates are just a `git pull` away.
 
 Installation
 ====
