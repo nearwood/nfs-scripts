@@ -13,6 +13,7 @@ tar xf latest.tar.gz --strip-components 1
 #TODO check if successful
 echo "Cleanup..."
 rm latest.tar.gz
+rm wp-content/plugins/hello.php
 cd /home/private
 echo "Fixing perms..."
 ./fixgrp.sh
