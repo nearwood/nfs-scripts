@@ -1,10 +1,32 @@
+. script.config
+
 theDate=`date "+%Y-%m-%d"`
-fileName=backup-$theDate.tar.bz2
+fileName=$WPBACKUPDIR/backup-$theDate.tar.bz2
+dbFileName=$WPBACKUPDIR/backup-$theDate.db
+
 if [ -f $fileName ]
 then
-echo "Backup file \"$fileName\" already exists. Exit.";
+ echo "Backup file \"$fileName\" already exists. Skipping file backup.";
 else
-tar -cjvf ~/$fileName /home/public
-echo "Backup complete."
+ echo "Backing up files..."
+ tar -cjf $fileName $WPDIR
+ echo "File backup complete."
 fi
 
+if [ -f $dbFileName ]
+then
+ echo "DB backup file \"$dbFileName\" already exists. Skipping DB backup.";
+else
+ #TODO straight to tar
+ echo "Backing up DB..."
+ wp --path=$WPDIR db export $dbFileName
+ tar -cjf $dbFileName.tar.bz2 $dbFileName
+
+ if [ $? -eq 0 ]
+ then
+  rm $dbFileName
+  echo "DB backup complete."
+ else
+  >&2 echo "DB backup failed."
+ fi
+fi
