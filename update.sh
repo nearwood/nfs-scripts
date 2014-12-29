@@ -1,4 +1,4 @@
-WP=`command -v wp`
+. script.config
 
 if [ $WP ]
 then
@@ -6,7 +6,7 @@ then
  echo "Backup..."
  ./backup.sh
  #returns new version available or "Success"?
- wp core update
+ wp --path=$WPDIR core update
  #check-update
  #TODO Update if vers out of date
  wp --path=$WPDIR plugin update --all
@@ -36,4 +36,5 @@ else
   echo "Fixing perms..."
   ./fixgrp.sh
   echo "Complete.";
+ fi
 fi
