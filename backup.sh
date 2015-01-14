@@ -10,7 +10,11 @@ then
 else
  echo "Backing up files..."
  tar -cjf $fileName $WPDIR
- echo "File backup complete."
+ if [ $? -eq 0 ]
+ then
+  chmod 600 $fileName
+  echo "File backup complete."
+ fi
 fi
 
 if [ -f $dbFileName ]
@@ -24,6 +28,7 @@ else
 
  if [ $? -eq 0 ]
  then
+  chmod 600 $dbFileName.tar.bz2
   rm $dbFileName
   echo "DB backup complete."
  else
