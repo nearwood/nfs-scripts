@@ -4,15 +4,17 @@ Small scripts for WordPress installs on NearlyFreeSpeech hosted sites. I was tir
 
 Dependancies
 ===
-* Bash (others may work, untested) [Provided by NFS]
-* WP-CLI (required by `backup.sh`) [Provided by NFS]
+These should already be installed by NFS unless you're on some weird server:
+* WP-CLI (required by `backup.sh` and `update.sh`)
+* Git (optional)
+* Bash (others may work, untested)
 
 Installation
 ===
-1. `git clone` into your NFS site's home directory. A nfs-scripts directory will be created and the scripts will reside there.
+1. `git clone https://github.com/nearwood/nfs-scripts` into your NFS site's home directory. A nfs-scripts directory will be created and the scripts will reside there.
 2. Edit `script.config` to set the following variables:
-  1. `WPDIR` - WordPress installation directory
-  2. `WPBACKUPDIR` - Desired backup directory
+  1. `WPDIR` - WordPress installation directory (absolute path)
+  2. `WPBACKUPDIR` - Desired backup directory (absolute path)
 3. `chmod u+x *.sh` in the nfs-scripts directory to be able to run them without using the shell command.
 
 Usage
