@@ -11,7 +11,7 @@ These should already be installed by NFS unless you're on some weird server:
 
 Installation
 ===
-1. `git clone https://github.com/nearwood/nfs-scripts` into your NFS site's home directory. A nfs-scripts directory will be created and the scripts will reside there.
+1. `git clone https://github.com/nearwood/nfs-scripts` into your NFS site's home directory (or other private location). A nfs-scripts directory will be created and the scripts will reside there.
 2. Edit `script.config` to set the following variables:
   1. `WPDIR` - WordPress installation directory (absolute path)
   2. `WPBACKUPDIR` - Desired backup directory (absolute path)
