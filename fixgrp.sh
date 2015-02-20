@@ -3,5 +3,7 @@
 echo "Fixing group..."
 chgrp -R web $WPDIR/*
 echo "Removing dolly plugin..."
-rm $WPDIR/wp-content/plugins/hello.php
-echo "Complete."
+rm -f $WPDIR/wp-content/plugins/hello.php
+echo "Fix wp-login permissions..."
+chmod 644 $WPDIR/wp-login.php
+echo "${0} Complete."

@@ -12,7 +12,7 @@ then
  wp --path=$WPDIR plugin update --all
  wp --path=$WPDIR theme update --all
  ./fixgrp.sh
- echo "Complete."
+ echo "${0} Complete."
 else
  echo "No WP-CLI"
  exit 0;
@@ -33,8 +33,7 @@ else
   rm latest.tar.gz
   rm wp-content/plugins/hello.php
   cd /home/private
-  echo "Fixing perms..."
   ./fixgrp.sh
-  echo "Complete.";
+  echo "${0} Complete.";
  fi
 fi
